@@ -1,0 +1,53 @@
+ 
+ 
+****CRIOGENIA 
+ 
+
+Geração do JAR --- jason-embedded.jar
+Raiz do projeto: 
+  mvn clean package -DskipTests
+O jar é gerado na pasta target. Nesse processo, tudo que estiver na pasta target é apagado.
+
+Execução de Testes:
+ Pasta t_cryogenic_exemplo 
+ O jason-embedded.jar deve estar nessa pasta.
+ Execute o seguinte comando: java -jar jason-embedded.jar main.mas2j -console
+ 
+ 
+ IMPLEMENTAÇÃO
+ 
+ Classe CommMiddleware implementa o comando  cryogenic
+ Classe cryogenic estende um comando DefaultInternalAction, adicionando um comando interno.
+ 
+ 
+ A FAZER:
+ 
+ Ajustar caminho absoluto para criar a pasta;
+ Problema na criação do MAS
+ Excluir a intenção do agente comunicador 
+ 
+ 
+ 
+ 
+ 
+ Criar uma versão do MAS apenas se o número de agentes for diferente.
+ 
+  if(agentsOfTheSMA.size() != mas.getAgents().size()){
+            System.out.println("Número de agentes em execução e no MAS é diferente.");
+            createMAS_File(dir_absoluto,mas);
+        }
+        
+Print Mente dos Agentes:
+   
+            System.out.println("Mente do agente "+agArch.getAgName()+" em tempo de execução.");
+            System.out.println(aslFileGenerator.generateInitialBeliefs(agent));
+            System.out.println(aslFileGenerator.generateInitialGoals(agent));
+            System.out.println(aslFileGenerator.generatePlans(agent));     
+            
+            
+Caminho
+//System.out.println("SRC:" +agent.getASLSrc()); // kate.asl
+
+ /*MAS2JProject mas2JProject = RunCentralisedMAS.getRunner().getProject();
+        System.out.println(mas2JProject.getClass().getName());
+        System.out.println(mas2JProject.);*/   
